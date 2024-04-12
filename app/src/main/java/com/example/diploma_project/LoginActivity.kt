@@ -46,4 +46,13 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onStart() {
+        super.onStart()
+
+        if (firebaseaauth.currentUser != null){
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
+    }
 }
