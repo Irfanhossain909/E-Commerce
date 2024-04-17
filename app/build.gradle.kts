@@ -61,4 +61,6 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation ("com.github.ibrahimsn98:SmoothBottomBar:1.7.9")
+
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 }
