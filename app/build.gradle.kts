@@ -63,4 +63,7 @@ dependencies {
     implementation ("com.github.ibrahimsn98:SmoothBottomBar:1.7.9")
 
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation ("androidx.recyclerview:recyclerview")
 }

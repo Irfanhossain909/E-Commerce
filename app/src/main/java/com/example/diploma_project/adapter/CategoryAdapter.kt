@@ -1,12 +1,14 @@
 package com.example.diploma_project.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.diploma_project.R
+import com.example.diploma_project.activity.CategoryActivity
 import com.example.diploma_project.databinding.LayoutCategoryItemBinding
 import diploma_project.ecommerceadmin.model.CategoryModel
 
@@ -27,5 +29,11 @@ class CategoryAdapter(var context : Context, var list: ArrayList<CategoryModel>)
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.binding.textView3.text = list[position].cate
         Glide.with(context).load(list[position].img).into(holder.binding.imageView)
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, CategoryActivity::class.java)
+            intent.putExtra("cate", list[position].cate)
+            context.startActivity(intent)
+        }
     }
 }
