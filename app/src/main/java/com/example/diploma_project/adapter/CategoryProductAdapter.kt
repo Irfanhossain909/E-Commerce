@@ -1,10 +1,12 @@
 package com.example.diploma_project.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.diploma_project.activity.ProductDetailsActivity
 import com.example.diploma_project.databinding.ItemCategoryProductLayoutBinding
 import diploma_project.ecommerceadmin.model.AddProductModel
 
@@ -27,5 +29,12 @@ class CategoryProductAdapter (val context: Context, val list: ArrayList<AddProdu
 
         holder.binding.textView6.text = list[position].productName
         holder.binding.textView10.text = list[position].productSp
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, ProductDetailsActivity::class.java)
+            intent.putExtra("id", list[position].productId)
+            context.startActivity(intent)
+
+        }
     }
 }
