@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("com.google.gms.google-services")
     id("androidx.navigation.safeargs.kotlin")
+
+    id ("kotlin-kapt")
 }
 
 android {
@@ -66,4 +68,16 @@ dependencies {
 
     implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
     implementation ("androidx.recyclerview:recyclerview")
+
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt ("androidx.room:room-compiler:$room_version")
+
+    implementation("androidx.room:room-ktx:$room_version")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1-Beta")
+
+
 }
+
+
