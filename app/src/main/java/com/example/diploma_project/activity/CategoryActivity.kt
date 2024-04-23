@@ -5,11 +5,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.diploma_project.R
 import com.example.diploma_project.adapter.CategoryProductAdapter
-import com.example.diploma_project.adapter.ProductAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import diploma_project.ecommerceadmin.model.AddProductModel
@@ -40,9 +38,6 @@ class CategoryActivity : AppCompatActivity() {
                     list.add(data!!)
                 }
                 val recycalerview = findViewById<RecyclerView>(R.id.recyclerView)
-                val layoutManager = LinearLayoutManager(this)
-                recycalerview.layoutManager = layoutManager
-
 
                 recycalerview.adapter = CategoryProductAdapter(this,list)
             }

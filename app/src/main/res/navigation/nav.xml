@@ -14,8 +14,8 @@
             android:id="@+id/action_homeFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_cartFragment2"
-            app:destination="@id/cartFragment" />
+            android:id="@+id/homeFragment_self"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
