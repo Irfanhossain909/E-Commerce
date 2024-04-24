@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Diploma_Project"
         tools:targetApi="31">
         <activity
+            android:name=".activity.AddressActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.CategoryActivity"
             android:exported="false" />
         <activity
