@@ -18,10 +18,13 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseaauth = FirebaseAuth.getInstance()
+
+
         binding.logSignBTN.setOnClickListener {
             val intent = Intent(this,SignupActivity::class.java)
             startActivity(intent)
         }
+
         binding.loginBTN.setOnClickListener {
             val email = binding.emailET.text.toString()
             val password = binding.passET.text.toString()
