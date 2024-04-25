@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.diploma_project.databinding.ActivitySignupBinding
+import com.example.diploma_project.model.UserModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -62,14 +63,6 @@ class SignupActivity : AppCompatActivity() {
 
     private fun storeData() {
 
-        val firestore = FirebaseFirestore.getInstance()
-        val uid = FirebaseAuth.getInstance().currentUser?.uid
-
-        val data = hashMapOf<String, Any>()
-        data["name"] = binding.userName.text.toString()
-        data["number"] = binding.userNumber.text.toString()
-        data["email"] = binding.emailET.text.toString()
-        data["password"] = binding.passET.text.toString()
 
         val builder = AlertDialog.Builder(this)
             .setTitle("Loadind....")
@@ -78,8 +71,24 @@ class SignupActivity : AppCompatActivity() {
             .create()
         builder.show()
 
+        val preferences = this.getSharedPreferences("user", MODE_PRIVATE)
+        val editor = preferences.edit()
 
-        if (uid!= null){
+        editor.putString("userName", binding.userName.text.toString())
+        editor.putString("userPhoneNumber", binding.userNumber.text.toString())
+        editor.apply()
+
+
+        val firestore = FirebaseFirestore.getInstance()
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+
+        val data = UserModel(userName = binding.userName.text.toString(),
+            userPhoneNumber = binding.userNumber.text.toString(),
+            emailsignUp = binding.emailET.text.toString(),
+            passwordsignUp = binding.passET.text.toString())
+
+
+        if (uid != null){
 
             Firebase.firestore.collection("users").document(uid)
                 .set(data).addOnSuccessListener {

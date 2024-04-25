@@ -33,6 +33,14 @@ class LoginActivity : AppCompatActivity() {
 
                     firebaseaauth.signInWithEmailAndPassword(email,password).addOnCompleteListener{
                         if (it.isSuccessful){
+
+                            val preferences = this.getSharedPreferences("user", MODE_PRIVATE)
+                            val editor = preferences.edit()
+
+
+                            editor.putString("userPhoneNumber", intent.getStringExtra("userPhoneNumber"))
+                            editor.apply()
+
                             val intent = Intent(this,MainActivity::class.java)
                             startActivity(intent)
                         }else{
