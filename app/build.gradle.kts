@@ -77,6 +77,8 @@ dependencies {
     implementation("androidx.room:room-ktx:$room_version")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1-Beta")
 
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
 
 }
 
