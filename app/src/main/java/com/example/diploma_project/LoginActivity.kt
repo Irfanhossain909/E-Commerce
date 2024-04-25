@@ -46,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
                         }else{
                             Toast.makeText(this,it.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
-                        Toast.makeText(this,"Account Created", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Lodin User", Toast.LENGTH_SHORT).show()
                     }.addOnFailureListener {
                         Toast.makeText(this,it.localizedMessage, Toast.LENGTH_SHORT).show()
                     }

@@ -1,96 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AddressActivity"
-    android:gravity="center"
-    android:layout_margin="18dp"
-    android:orientation="vertical">
+    android:layout_margin="20dp"
+    tools:context=".activity.AddressActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="DHAKA CART"
-        android:layout_margin="20dp"
-        android:textSize="40sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:fontFamily="@font/aclonica"
-        android:textAlignment="center"/>
+        android:layout_height="150dp"
+        android:src="@drawable/dhaka"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="true">
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPersonName"
             android:hint="User Name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="5dp"
+        android:id="@+id/textInputLayout8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="true">
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout7"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout7"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/userPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint="Contuct Number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="5dp"
+        android:id="@+id/textInputLayout9"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout8"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/division"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:hint="Division" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="5dp"
+        android:id="@+id/textInputLayout10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout9"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout9"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout9">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:hint="City" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="5dp"
+        android:id="@+id/textInputLayout11"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout10"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout10"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout10">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:hint="Address" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="5dp"
+        android:id="@+id/textInputLayout12"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout11"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout11"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout11">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/postCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint="Post" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,8 +125,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Checkout"
-        app:cornerRadius="1dp"/>
+        app:cornerRadius="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout12"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout12" />
 
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

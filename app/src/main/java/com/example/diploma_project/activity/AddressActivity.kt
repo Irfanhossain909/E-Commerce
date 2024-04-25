@@ -25,50 +25,53 @@ class AddressActivity : AppCompatActivity() {
         loadUserInfo()
 
         binding.proceed.setOnClickListener {
-            validateData(
-                binding.userName.text.toString(),
-                binding.userPhoneNumber.text.toString(),
-                binding.division.text.toString(),
-                binding.city.text.toString(),
-                binding.address.text.toString(),
-                binding.postCode.text.toString()
-            )
+
+            startActivity(Intent(this,CheckoutActivity::class.java))
+
+//            validateData(
+//                binding.userName.text.toString(),
+//                binding.userPhoneNumber.text.toString(),
+//                binding.division.text.toString(),
+//                binding.city.text.toString(),
+//                binding.address.text.toString(),
+//                binding.postCode.text.toString()
+//            )
         }
 
     }
 
-    private fun validateData(name: String, number: String, division: String,
-                             city: String, address: String, postCode: String) {
+//    private fun validateData(name: String, number: String, division: String,
+//                             city: String, address: String, postCode: String) {
+//
+//        if (name.isEmpty() || number.isEmpty() || division.isEmpty() ||
+//            city.isEmpty() || address.isEmpty() || postCode.isEmpty()){
+//
+//
+//            Toast.makeText(this,"Please fill all details",Toast.LENGTH_SHORT).show()
+//        }else{
+//            storeData(name,number,division,city,address,postCode)
+//        }
+//    }
 
-        if (name.isEmpty() || number.isEmpty() || division.isEmpty() ||
-            city.isEmpty() || address.isEmpty() || postCode.isEmpty()){
-
-
-            Toast.makeText(this,"Please fill all details",Toast.LENGTH_SHORT).show()
-        }else{
-            storeData(name,number,division,city,address,postCode)
-        }
-    }
-
-    private fun storeData(name: String, number: String, division: String, city: String, address: String, postCode: String) {
-
-        val map = hashMapOf<String, Any>()
-        map["division"] = division
-        map["city"] = city
-        map["address"] = address
-        map["postCode"] = postCode
-        map["userName"] = name
-        map["userPhoneNumber"] = number
-
-        Firebase.firestore.collection("users")
-            .document(preferences.getString("userPhoneNumber", "")!!)
-            .update(map).addOnSuccessListener {
-                startActivity(Intent(this,CheckoutActivity::class.java))
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "Something went wrong",Toast.LENGTH_SHORT).show()
-            }
-    }
+//    private fun storeData(name: String, number: String, division: String, city: String, address: String, postCode: String) {
+//
+//        val map = hashMapOf<String, Any>()
+//        map["division"] = division
+//        map["city"] = city
+//        map["address"] = address
+//        map["postCode"] = postCode
+//        map["userName"] = name
+//        map["userPhoneNumber"] = number
+//
+//        Firebase.firestore.collection("users")
+//            .document(preferences.getString("userPhoneNumber", "")!!)
+//            .update(map).addOnSuccessListener {
+//                startActivity(Intent(this,CheckoutActivity::class.java))
+//            }
+//            .addOnFailureListener {
+//                Toast.makeText(this, "Something went wrong",Toast.LENGTH_SHORT).show()
+//            }
+//    }
 
 
     private fun loadUserInfo() {
