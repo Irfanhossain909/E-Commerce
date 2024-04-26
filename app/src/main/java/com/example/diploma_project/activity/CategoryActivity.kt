@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.diploma_project.R
 import com.example.diploma_project.adapter.CategoryProductAdapter
@@ -21,11 +22,6 @@ class CategoryActivity : AppCompatActivity() {
         getProducts(intent.getStringExtra("cate"))
 
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
     }
 
     private fun getProducts(strings: String?) {
@@ -38,6 +34,8 @@ class CategoryActivity : AppCompatActivity() {
                     list.add(data!!)
                 }
                 val recycalerview = findViewById<RecyclerView>(R.id.recyclerView)
+
+                recycalerview.layoutManager = LinearLayoutManager(this)
 
                 recycalerview.adapter = CategoryProductAdapter(this,list)
             }
