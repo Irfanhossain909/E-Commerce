@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:padding="20dp"
     android:background="@color/white"
     tools:context=".activity.AddressActivity">
 
@@ -31,6 +31,7 @@
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:inputType="textPersonName"
             android:hint="User Name" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -48,6 +49,7 @@
             android:id="@+id/userPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:inputType="number"
             android:hint="Contuct Number" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -65,6 +67,7 @@
             android:id="@+id/division"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:inputType="text"
             android:hint="Division" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -82,6 +85,7 @@
             android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:inputType="text"
             android:hint="City" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -99,6 +103,7 @@
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:inputType="text"
             android:hint="Address" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -117,6 +122,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:textColor="@color/black"
             android:hint="Post" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,8 +131,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:background="#2E3192"
         android:text="Checkout"
-        app:cornerRadius="1dp"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout12"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout12" />
